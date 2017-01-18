@@ -1,0 +1,84 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: whitesmoke url(-darkest.png) repeat fixed;
+  color: #684D43;
+}
+.wrap_center {
+    background: url("../images/barelythere.png") repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 4px 9px rgba(14, 20, 26, 0.25);
+    float: left;
+    margin: 10px;
+    padding: 44px 6em 72px;
+    position: relative;
+    width: 387px;
+}
+.x{
+    float: left;
+    height: 100px;
+    width: 598px;
+}
+.wrap_header {
+   background: url("../images/barelythere.png") repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 4px 9px rgba(14, 20, 26, 0.25);
+    float: left;
+    height: 84px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    width: 1000px;
+}
+.wrap_footer {
+    background: url("../images/barelythere.png") repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 4px 9px rgba(14, 20, 26, 0.25);
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    width: 1000px;
+}
+.wrap_sides {
+    background: url("../images/barelythere.png") repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 4px 9px rgba(14, 20, 26, 0.25);
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    width: 180px;
+}
+.wrap_centers {
+    background: url("../images/barelythere.png") repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 4px 9px rgba(14, 20, 26, 0.25);
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    width: 180px;
+}
+.btw {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  color: #99aabb;
+  margin-top: -1em;
+}
+.container_main{
+   clear: both;
+}
+.container_center{
+    margin: auto;
+    width: 1058px;
+}
+
+
+
+
+
+
+
+

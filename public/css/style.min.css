@@ -1,0 +1,556 @@
+.wrap_panel_hidden{
+    display: none;
+}
+.wrap_panel_show{
+    display: block;
+}
+.wrap_panel{
+    margin-bottom: 25px;
+}
+.btn_close_panel{
+	margin: 20px 0 10px 0;
+	margin-bottom: 17px;
+}
+.close_Arrow{
+   margin: 10px;
+}
+.cfg_quest_items{
+	overflow: hidden;
+	margin: 54px;
+}
+.cfg_quest_item_label{
+	float: left;
+	margin-right: 27px;
+	width: 179px;
+	margin-top: 10px;
+}
+.cfg_quest_item_component{
+   margin-top: 10px;
+}
+.questionnaire_comment{
+width: 788px;
+height: 43px;
+background-color: rgba(212,235,240, 0.5);
+margin-top: 7px;
+}
+body { 
+   background-color: rgba(-31,49,102, 0.1);
+}
+.main{
+margin-top: 20px;
+background-image: url('../images/2_4.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: top;
+/*background-color: rgba(240,235,203, 0.8); */
+}
+.trans_letters{
+	color: rgba(-31,49,102, 0.5);
+}
+.top_link{
+   color: orange;
+}
+.header_title{
+margin-top: 65px;
+margin-bottom: 49px;;
+}
+.under_text{
+	background-color: rgba(245,235,240, 0.5);
+	padding: 24px;
+	margin-bottom: 18px;
+}
+.radio_input{
+overflow: hidden;
+width: 30px;
+float: left;
+margin-left: 5px;
+margin-bottom: 3px;
+}
+.radio_input_text{
+overflow: hidden;
+width: 66px;
+float: left;
+}
+.container_row{
+overflow: hidden;
+width: 510px;
+background-color: rgba(212,235,240, 0.5);
+}
+
+ul.jqtree-tree li.jqtree-selected > .jqtree-element, ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
+background-color: rgba(212,235,240, 0.5);
+background: -webkit-gradient(linear, left top, left bottom, from(rgba(212,235,240, -0.5)), to(rgba(96,275,136, 0.5)))
+}
+/* for tabs */
+ul, ol {
+padding: 0;
+margin: 0 0 10px 0px;
+}
+.jstree-default>.jstree-striped {
+background: transparent; 
+}
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+width: 972px;}
+
+/* custom controls */
+.questionnaire_controls{
+float: left;
+width: 451px;
+}
+/* custom controls */
+.questionnaire_controls_log{
+  float: left;
+  width: 719px;
+}
+.list_users_left {
+    float: left;
+}
+.list_users_right {
+}
+.questionnaire_control_users {
+  clear: both;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.questionnaire_control_users_title {
+  clear: both;
+  /* border: 1px solid red; */
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 17px;
+  font-style: oblique;
+  color: yellow;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid yellow;
+  margin-bottom: 30px;
+}
+.question_controls{
+float: left;
+
+}
+.text_question{
+    width: 695px;
+}
+.expli{
+font-weight: normal;
+font-style: italic;
+font-size: 11px;
+color: darkcyan; 
+}
+.user_log {
+    float: left;
+    margin-left: 8px;
+}
+.user_log_label {
+  float: left;
+  margin-left: 8px;
+  width: 757px;
+  overflow: hidden;
+}
+.user_log_ticket {
+  float: left;
+  margin-left: 8px;
+  width: 887px;
+}
+.inside_ticket {
+  margin-left: 1px;
+}
+.qc_label{
+  float: left;
+  width: 135px;
+  position: relative;
+  top: 3px;
+  color: beige;
+  margin-left: 6px;
+}
+.qc_label_button{
+
+}
+.qc_label_good_reponse{
+float: left;
+width: 135px;
+position: relative;
+top: 3px;
+color: greenyellow;
+}
+.qc_label_response_qcm_inclusive{
+float: left;
+width: 132px;
+position: relative;
+top: 3px;
+color: greenyellow;;
+}
+.qc_label_response_qcm_exclusives{
+float: left;
+width: 121px;
+position: relative;
+top: 4px;
+color: greenyellow;
+}
+.qc_tree{
+position: relative;
+top: 3px;
+color: rgba(-31,49,102, 1);
+font-weight: bold;
+}
+.image_boxes {
+padding: 7px;
+}
+.text_image {
+overflow: hidden;
+border-color: rgb(223, 182, 182);
+}
+.text_image_b1 {
+margin-right: 15px;
+position: relative;
+top: 4px;
+margin-bottom: 1px;
+}
+.text_image_b2 {
+margin-right: 15px;
+font-style: italic;
+color: orange;
+}
+.text_image_b3 {
+margin-right: 15px;
+margin-top: 2px;
+}
+.qc_image{
+position: relative;
+top: 3px;
+color: rgba(-31,49,102, 1);
+font-weight: bold;
+margin-bottom: 11px;
+margin-left: 6px;
+}
+.qcm_btn{
+margin-top: 21px;
+margin-left: 4px;
+}
+
+.qcm_btn_ticket{
+  /*margin-top: 21px;
+  margin-left: 4px;
+  clear: both;
+  margin-left: 7px;*/
+}
+.yellow{
+    color: yellow;
+}
+.qc_input_label {
+  float: left;
+  margin-right: 142px;
+}
+.qc_input_log_txtarea {
+width: 561px;
+  height: 112px;
+}
+.qc_input{
+    overflow: hidden;    
+}
+.qc_input_log{
+    
+}
+.qc_input_ticket_generator {
+    overflow: hidden;
+    float: left;
+    margin-right: 144px;
+}
+.qc_input_question{
+    width: 915px;
+}
+.qc_good_response{
+    width: 810px;
+}
+.qc_input_type_response{
+    width: 915px;
+}
+.radio_type{
+position: relative;
+top: -2px;
+}
+.my_select {
+width: 206px;
+}
+.my_select_authors {
+width: 570px;
+}
+.my_input1 {
+height: 30px;
+}
+.perso_Arrow{
+width: 17px;
+position: relative;
+top: -4px;
+margin-left: 4px;
+}
+.jqte_tool.jqte_tool_1 .jqte_tool_label {
+height: 24px;
+}
+#id_btn_save_question{
+/*position: relative;
+top: 236px;
+left: 320px;*/ 
+position: relative;
+bottom: 10px;
+left: 806px;
+}
+#id_btn_save_questionnaire{
+position: relative;
+top: 126px;
+left: 288px;
+}
+/* jsTree csi */
+#jstree_demo {
+    /*
+background-image: url('images/2_3.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-color: rgba(240,235,203, 0.8); */
+
+background-color: rgba(-31,49,102, 0.1); /*rgba(-31,167,102, 0.1);*/ /* rgba(239,235,215, 0.8); */
+padding: 8px 16px;
+margin-bottom: 16px;
+font-size: 13px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+padding: 25px;
+
+}
+.jstree-default .jstree-wholerow-clicked {
+    background: rgba(105,343,58, 0.2);
+}
+.buttons_tree{
+float: right;
+margin-bottom: 13px;
+}
+
+/* tabs */
+#tab1, #tab2, #tab3 {
+padding: 19px;
+background: rgba(-31,49,102, 0.5);
+color: white;
+overflow: hidden;
+margin-bottom: 7px;
+}
+
+.tabs li {
+        list-style:none;
+        display:inline;
+}
+
+.tabs a {
+        padding:5px 10px;
+        display:inline-block;
+        background:rgba(239,235,210, 0.8);
+        color:#fff;
+        text-decoration:none;
+}
+
+.tabs a.active {
+background: rgba(239,235,210, 0.3);
+color: navy;
+}
+.blue_border_example {
+    border: 10px solid blue;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 25px blue;
+}
+.perso-arrow{
+position: relative;
+top: -4px;
+color: greenyellow;
+margin-right: 5px;
+margin-left: 4px;
+}
+/* date picker custom */
+.ui-widget-header { 
+	border: 1px solid rgba(-31,49,102, 0.5);
+	background: rgba(-31,49,102, 0.5);
+	color: #ffffff;
+	font-weight: bold;
+}
+.navbar-inner {
+margin-top: 6px;
+}
+.my_icons{
+float: left;
+width: 20px;
+color: beige;
+position: relative;
+top: 5px;
+}
+.my_icons_good_response{
+float: left;
+width: 20px;
+color: yellow;
+position: relative;
+top: 5px;
+}
+.qcm_exc{
+}
+.delete_btn{
+float: right;
+margin-top: 10px;
+margin-right: 7px;
+margin-bottom: 10px;
+}
+.qcm_incl{
+    margin-top: 10px;
+}
+.delete_btn_class{
+
+}
+.q_qcm{
+width: 788px;
+float: left;
+border: 0px solid black;
+padding: 0px;
+margin-top: 10px;
+margin-left: 105px;
+}
+/* d&d stuffs */
+#sortable-multiple { list-style-type: none; margin: 0; padding: 0; }
+sortable-multiple li { margin: 0 0px 1px 0px; padding: 5px; font-size: 1.2em;  }
+html>body sortable-multiple li { }
+.ui-state-highlight { }
+
+#sortable-mono { list-style-type: none; margin: 0; padding: 0; }
+sortable-mono li { margin: 0 0px 1px 0px; padding: 5px; font-size: 1.2em;  }
+html>body sortable-mono li { }
+.ui-state-highlight { }
+
+.qcm_inside_li_cbox{
+float: left;
+margin-right: 28px;
+position: relative;
+/* top: 21px; */
+left: 12px;
+}
+.qcm_inside_li_txt{
+float: left;
+}
+.txt-qcm{
+width: 708px;
+margin-right: 42px;
+/* margin-top: 9px; */
+border: 1px solid lightslategrey;
+}
+.not-sortable{
+    
+}
+textarea {
+    resize: none;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+/* border: 0px solid #d3d3d3; */
+background: none;
+background-color: rgba(245,235,240, 0.2);
+font-weight: normal;
+color: #555555;
+margin: 2px;
+padding: 8px;
+}
+
+textarea .qc_input{
+margin-bottom: 0px !important;
+width: 643px;
+}
+.txta_custom {
+margin-bottom: 0px !important;
+width: 639px;
+}
+.main_li_content{
+overflow: hidden;
+width: 1200px;
+border: 1px solid red;
+}
+.good_answer_text_wrapper{}
+.good_answer_date_wrapper{}
+.good_answer_number_wrapper{}
+.good_answer_qcm_cbx_wrapper{}
+.good_answer_qcm_radio_wrapper{}
+
+/*upload file*/
+.selectImage{
+float: left;
+/* border: 1px solid whitesmoke; */
+margin-right: 34px;
+}
+.image_preview {
+border: 1px solid whitesmoke;
+padding: 12px;
+background-color: transparent;
+width: 250px;
+height: 230px;
+overflow: hidden;
+float: left;
+margin: 1px;
+}
+.image_loaded {
+border: 1px solid whitesmoke;
+padding: 12px;
+background-color: transparent;
+width: 250px;
+height: 230px;
+overflow: hidden;
+float: left;
+margin: 14px;
+}
+.image_container {
+    overflow: hidden;
+}
+
+.login_class {
+
+}
+.password_class {
+
+}
+.ui-dialog .ui-dialog-title {
+height: 45px;
+}
+.auth_box {
+overflow: hidden;
+border-left-color: red;
+margin-top: 4px;
+margin-left: 45px;
+}
+.error_message {
+    color: red;
+}
+.link_login_class {
+float: right;
+position: relative;
+top: -69px;
+right: 39px;
+}
+.image_wrapper {
+    float: left;
+}
+.picture_to_delete {
+    float: left;
+}
+a {
+  color: #E0C436;
+  text-decoration: none;
+}
+.synchro_users_ticket {
+  margin-left: 16px;
+  position: relative;
+  top: -26px;
+  font-style: italic;
+  font-size: 13px;
+  color: darkred;
+}
+.error_users_message {
+    color: brown;
+}
+.succcess_users_message {
+    color: lightgreen;
+}
+#a_sync_users {
+    cursor: pointer; 
+}

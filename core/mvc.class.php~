@@ -1,0 +1,15 @@
+<?php
+class Mvc {
+   public $module="";
+   public $controller="";
+   public $action="";
+   public $params = array();
+   public function toString(){
+	echo '<pre>';
+	echo $this->module . '<br/>';
+	echo $this->controller . '<br/>';
+	echo $this->action . '<br/>';
+	var_dump($this->params) . '<br/>';
+	echo '</pre>';
+   }
+} 

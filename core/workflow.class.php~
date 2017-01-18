@@ -1,0 +1,239 @@
+<?php
+/**
+ * key point of all the MVC process
+ */
+class Workflow{
+   //instances
+   public $configInstance = null;//config
+   public $mvcInstance = null;//mvc
+   public $modelInstance = null;//model
+   //urls
+   public $href_public = null;
+   public $db_key_ini = null;
+
+   public function __construct(){
+      $this->config();
+      $this->setConstants();
+      $this->setModel();
+      $this->buildMvcInstance();
+   }
+   //application ini
+   public function config(){
+      $this->configInstance = new Config();
+      $this->configInstance->applicationIni = parse_ini_file("../config/application.ini",true);
+   }
+   //make db connection
+   public function setModel(){
+	$this->db_key_ini = (Constant::ENV_LOCAL == getenv('ENV'))? 
+	   Constant::DB_KEY_ENV_LOCAL: Constant::DB_KEY_ENV_REMOTE;
+   }
+   //build the aggregate mvc
+   public function buildMvcInstance(){
+	/*********************************************************************
+	 * extract the params
+	 ********************************************************************/
+
+	//directory containing the called script
+	$uri = rtrim( dirname($_SERVER["SCRIPT_NAME"]), '/' );
+	//echo "<br/>directory containing the called script: " . $uri . "<br/>";
+	//var_dump($_SERVER["SCRIPT_NAME"]);
+
+	//build href for public stuffs
+	$this->href_public = SERVER_NAME . $uri;
+	//echo "<br/>href:  " . $href_public. "<br/>";
+
+	//all url  data (params) following the containing directory
+	$uri = '/' . trim( str_replace( $uri, '', $_SERVER['REQUEST_URI'] ), '/' );
+	//echo "<br/>all url  data following the containing directory: " . $uri. "<br/>";
+	//var_dump($_SERVER["REQUEST_URI"]);
+
+	//translate special url chars in orde to be usable by php script
+	$uri = urldecode( $uri );
+	//echo "<br/>translate special url chars in orde to be usable by php script: " . $uri. "<br/>";
+
+	//echo "URI: " . $uri . "<br/>";
+	//echo "<pre>";
+	$tmp = preg_split("|/|",$uri);
+	//var_dump($tmp);
+	$module = (isset($tmp[1])    && strlen($tmp[1])>0)?$tmp[1]:"_NO_MODULE_";
+	$controller = (isset($tmp[2])&& strlen($tmp[2])>0)?$tmp[2]:"_NO_CONTROLLER_";
+	$action = (isset($tmp[3])    && strlen($tmp[3])>0)?$tmp[3]:"_NO_ACTION_";
+
+	/*********************************************************************
+	 * build result
+	 ********************************************************************/
+        $mvc = new Mvc();
+	$mvc->module=$module;
+	$mvc->controller=$controller;
+	$mvc->action=$action;
+	$mvc->params=array();
+	//echo $mvc->toString();//debug
+        $this->mvcInstance = $mvc;
+   }
+   public function setConstants(){
+	/**
+	 * error
+	 */
+	error_reporting(E_ALL); ini_set("display_errors", 1);
+        if(!defined('ERROR_PATH')){
+	   define('ERROR_PATH', realpath(__DIR__.'/../app/layout/error/').DIRECTORY_SEPARATOR);}
+        
+	/**
+	 * layout
+	 */
+        if(!defined('LAYOUT_DEFAULT_PATH')){ 
+	   define('LAYOUT_DEFAULT_PATH', realpath(__DIR__.'/../app/layout/default/').DIRECTORY_SEPARATOR);
+        }
+        if(!defined('LAYOUT_PATH')){ 
+	   define('LAYOUT_PATH', realpath(__DIR__.'/../app/layout/').DIRECTORY_SEPARATOR);}
+	/**
+	 * module
+	 */
+        if(!defined('MODULE_PATH')){ 
+	   define('MODULE_PATH', realpath(__DIR__.'/../app/classes/modules/').DIRECTORY_SEPARATOR);}
+	/**
+	 * public
+	 */
+        if(!defined('PUBLIC_PATH')){ 
+	   define('PUBLIC_PATH', realpath(__DIR__.'/../public/').DIRECTORY_SEPARATOR);}
+	/**
+	 * server
+	 */
+        if(!defined('SERVER_NAME')){ 
+	   define( 'SERVER_NAME', "//" . $_SERVER["SERVER_NAME"] );}
+   }
+   /**
+    * test the existence of module/contoller/action asked
+    */
+   public function run(){
+
+	/*********************************************************************
+	 * test against authorized values
+	 ********************************************************************/
+
+	/**
+	 * authorized modules
+	 */
+	$array_modules = array (//todo: dynamic
+           //qcm tool"
+	   "storage",
+           //ferme
+           "ferme"
+	);
+	/**
+	 * authorized controllers
+	 */
+	$array_controllers = array (//todo: dynamic
+           //qcm tool"
+	   "show",
+           //ferme
+           "calculateur"
+	);
+	/**
+	 * authorized actions
+	 */
+	$array_actions = array (//todo: dynamic
+           //qcm tool
+	   "resp",
+	   "all",
+           //ferme
+           "userform"
+	);
+	$partOfMvcBotFound = FALSE;
+	/**
+	 * module found
+	 */
+	if (in_array($this->mvcInstance->module, $array_modules)) {
+		/**
+		 * controller found
+		 */
+		if (in_array($this->mvcInstance->controller, $array_controllers)) {
+			/**
+			 * action found
+			 */
+			if (in_array($this->mvcInstance->action, $array_actions)) {
+
+                            //buils the controller + action + view instances HERE!
+
+                            /**
+                             * instance of controller
+                             */
+                            include_once( 
+                               MODULE_PATH                    . 
+                               $this->mvcInstance->module     . '/controllers/' .
+                               $this->mvcInstance->controller .
+                               'Controller.class.php' );  //ex: showController.class.php
+
+                            $class = $this->mvcInstance->controller . "Controller";
+                            $controllerInstance = new $class();     
+                            /**
+                             * instance of model
+                             */
+
+                          $x = MODULE_PATH                    . 
+                               $this->mvcInstance->module     . '/models/' .
+                               $this->mvcInstance->controller .
+                               'Model.class.php' ;  //ex: showController.class.php
+//echo $x;
+//die;
+                            include_once( 
+                               MODULE_PATH                    . 
+                               $this->mvcInstance->module     . '/models/' .
+                               $this->mvcInstance->controller .
+                               'Model.class.php' );  //ex: showController.class.php
+
+			    $dbHost = $this->configInstance->applicationIni[$this->db_key_ini]['db_host'];
+			    $user = $this->configInstance->applicationIni[$this->db_key_ini]['user'];
+			    $password = $this->configInstance->applicationIni[$this->db_key_ini]['password'];
+			    $dbName = $this->configInstance->applicationIni[$this->db_key_ini]['db_name'];
+
+                            $class = $this->mvcInstance->controller . "Model";
+
+                            $this->modelInstance = new $class($dbHost,$user,$password,$dbName);
+//echo "ok"; die;
+                            /**
+                             * instance of view
+                             */
+                            // to do ...
+
+		            include_once( LAYOUT_PATH . $this->mvcInstance->module . '/' .'index.php' );   
+
+                               /*$this->mvcInstance->module . 
+                               $this->mvcInstance->module .'/index.php' ); */
+			}else{
+                           //echo "else of: action";die();
+		           $partOfMvcBotFound = TRUE;
+		        }
+	       }else{
+                  //echo "else of: controller";die();
+		  $partOfMvcBotFound = TRUE;
+	       }
+	}else{
+            //echo "else of: module";die();
+	    $partOfMvcBotFound = TRUE;
+	}
+
+	/**
+	 * default page asked OR something NOT found
+	 */
+	if($partOfMvcBotFound){
+	    /**
+	     * wrong part(s) detected
+	     */
+	    if($this->mvcInstance->module != "_NO_MODULE_" ||
+	       $this->mvcInstance->controller != "_NO_CONTROLLER_" ||
+	       $this->mvcInstance->action != "_NO_ACTION_"
+	    )
+	    {
+	       include( realpath(ERROR_PATH . '404.php' ));
+	    /**
+	     * default page
+	     */
+	    }else{
+	       include( LAYOUT_PATH . "default"  . '/index.php' );
+	    }
+	}
+      return true;
+   }
+}
+

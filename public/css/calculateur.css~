@@ -1,0 +1,53 @@
+.fs_custom{
+	padding: 30px;
+	border: 1px solid whitesmoke;
+	width: 1106px;
+}
+.fs_legend_custom{
+	border: none;
+	width: 217px;
+	font-size: 15px;
+	color: grey;
+}
+.glob_line{
+overflow: hidden;
+background-repeat:no-repeat;
+background-image:url("../images/h2.jpg");
+margin-bottom: 10px;
+}
+.glob_label{
+margin: 12px;
+font-weight: bold;
+}
+.sub_line{
+}
+.field_1{
+float: left;
+margin-left: 12px;
+margin-right: 12px;
+width: 65px;
+}
+.field_1_total{
+float: left;
+margin-left: 12px;
+margin-right: 12px;
+width: 154px;
+}
+.label_1{
+float: left;
+margin-left: 12px;
+margin-right: 12px;
+position: relative;
+top: 3px;
+}
+.select_1{
+float: left;
+margin-left: 12px;
+margin-right: 12px;
+width: 336px;
+}
+.btn_1{
+float: left;
+margin-left: 12px;
+margin-right: 12px;
+}

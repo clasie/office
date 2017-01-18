@@ -1,0 +1,6 @@
+SetEnv PHP_VER 5_3
+SetEnv ENV LOCAL
+RewriteEngine On
+RewriteRule ^inc/.*$ index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]

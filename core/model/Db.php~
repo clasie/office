@@ -1,0 +1,20 @@
+<?php
+
+class Db {
+    private $search = "";
+    function __construct($dbHost,$user,$password,$dbName){
+        $this->connectDb($dbHost,$user,$password,$dbName);
+    }
+    private function connectDb($dbHost,$user,$password,$dbName){
+        mysql_connect($dbHost,$user,$password);
+        mysql_select_db($dbName) or die(mysql_error());
+        mysql_query("SET NAMES UTF8");
+    }
+    public function my_addslashes($val){
+        if(!get_magic_quotes_gpc())
+            $val = addslashes($val);
+        return $val;
+    }
+   
+}
+

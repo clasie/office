@@ -1,0 +1,123 @@
+<?php
+
+//config
+$configs = parse_ini_file("config/application.ini");
+var_dump($configs);
+die();
+
+class Crud {
+/*
+    //remote
+    const TABLE_PROVIDER = 'users_tuto_provider';
+    const TABLE_QUESTION = 'qcms_question';
+    const DB_PASSWORD = 'LXTgKQgK';
+    const DB_USER = 'creazyprice';
+    const DB_NAME = 'creazyprice';
+    const DB_HOST = 'mysql51-37.perso'; */
+    //local
+    const TABLE_PROVIDER = 'users_tuto_provider';
+    const TABLE_QUESTION = 'qcms_question';
+    const DB_PASSWORD = 'geo231094';
+    const DB_USER = 'root';
+    const DB_NAME = 'test';
+    const DB_HOST = 'localhost';
+    function __construct(){
+
+        $this->connectDb();
+        /*$sql = "
+            CREATE TABLE IF NOT EXISTS test.users_tuto_data (
+              id_provider int(5) NOT NULL AUTO_INCREMENT,
+              fname varchar(50) NOT NULL,
+              name varchar(100) NOT NULL,
+              mail varchar(50) NOT NULL,
+              PRIMARY KEY (id_user),
+              KEY username (fname)
+            ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+            ";
+            mysql_query($sql);*/
+    }
+    private function connectDb(){
+        mysql_connect(Crud::DB_HOST,Crud::DB_USER,Crud::DB_PASSWORD);
+        mysql_select_db(Crud::DB_NAME) or die(mysql_error());
+        mysql_query("SET NAMES 'utf-8'");
+    }
+    public function my_addslashes($val){
+        if(!get_magic_quotes_gpc())
+            $val = addslashes($val);
+        return $val;
+    }
+    public function insertUser($fname, $name, $mail){
+        $fname = $this->my_addslashes($fname);
+        $name  = $this->my_addslashes($name);
+        $mail  = $this->my_addslashes($mail);
+        $sql = "INSERT INTO " . Crud::TABLE_PROVIDER . " VALUES(NULL,'$fname','$name','$mail')";
+        mysql_query($sql);
+    }
+    public function updateUser($id_provider, $fname, $name, $mail){
+        $id_provider = $this->my_addslashes($id_provider);
+        $fname = $this->my_addslashes($fname);
+        $name  = $this->my_addslashes($name);
+        $mail  = $this->my_addslashes($mail);
+        $sql = "UPDATE " . Crud::TABLE_PROVIDER .
+           " SET fname='$fname', name='$name', mail='$mail' " .
+           " WHERE id_provider=$id_provider";
+        mysql_query($sql);
+    }
+    public function deleteUser($id_provider){
+        $id_provider = $this->my_addslashes($id_provider);
+
+        $sql="DELETE FROM " . Crud::TABLE_PROVIDER . " WHERE id_provider=$id_provider";
+        mysql_query($sql);
+    }
+    public function getUser(){}
+    public function getAllUsers(){
+        $sql = "SELECT * FROM " . Crud::TABLE_PROVIDER . "";
+        $res = mysql_query($sql);
+        return $res;
+    }
+    public function getAllQuestions(){
+
+        $sql = "
+		SELECT q.fr 'question', r.fr 'response'
+		FROM qcms_question AS q
+		JOIN qcms_response_correction AS r ON q.id_question = r.id_question
+               ";
+        $res = mysql_query($sql);
+        return $res;
+    }
+}
+
+class Form {
+    public function getForm($action="", $method="POST"){
+        
+        $form=<<<FORM
+           <form name="update" action="$action" method="$method" >
+               
+               <input type="hidden" name="id_provider" value="ID_VALUE" />
+
+               <input type="text" name="fname" value="FNAME_VALUE" />
+               <input type="text" name="name"  value="NAME_VALUE" />
+               <input type="text" name="mail"  value="MAIL_VALUE" />
+
+               <input type="submit" name="update" value="Update" />
+               <input type="submit" name="delete" value="Delete" />
+           </form>
+FORM;
+        return $form;
+    }
+    public function getFormInsert($action="", $method="POST"){
+
+        $form=<<<FORM
+           <form name="update" action="$action" method="$method" >
+
+               <input type="text" name="fname" value="" />
+               <input type="text" name="name"  value="" />
+               <input type="text" name="mail"  value="" />
+
+               <input type="submit" name="insert" value="New" />
+           </form>
+FORM;
+        return $form;
+    }
+}
+

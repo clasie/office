@@ -1,0 +1,237 @@
+/* Baseline - a designer framework, Copyright (C) 2009 Stephane Curzi, ProjetUrbain.com, Creative Commons Attribution-Share Alike 3.0 License */
+/* reset */
+html,body,div,span,a,img,h1,h2,h3,h4,h5,h6,hgroup,p,dl,dialog,dt,dd,ol,ul,li,abbr,acronym,address,b,big,blockquote,cite,code,del,dfn,em,i,ins,kbd,pre,q,samp,tt,var,small,strong,sub,sup,object,iframe,form,fieldset,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,footer,header,nav,section,figure,menu,time,mark,audio,video{font-family:inherit;font-size:100%;font-weight:inherit;font-style:inherit;vertical-align:baseline;white-space:normal;text-align:left;margin:0;padding:0;border:0;outline:0;background:transparent}textarea{font-family:inherit;font-size:100%;font-weight:normal;font-style:normal;white-space:normal;text-align:left;margin:0;padding:0}article,aside,footer,header,nav,section,dialog,figure,hgroup,menu{display:block}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}del,ins{text-decoration:none}ol,ul{list-style:none}nav ul{list-style-type:none}table{border-collapse:separate;border-spacing:0;background-color:transparent;width:auto;height:auto}:focus{outline:0}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:"" ""}input{margin:0}applet,basefont,dir,font,isindex,menu,s,strike,u{font-family:inherit;font-size:100%;font-weight:normal;font-style:normal;white-space:normal;vertical-align:baseline;text-decoration:inherit;text-align:left;color:inherit;margin:0;padding:0;border:0;outline:0}dir,menu{list-style:none}nobr{white-space:normal}blink{text-decoration:none}marquee{overflow:visible}
+/* base */
+body{font-family:helvetica,arial,sans-serif;line-height:1.5;background:white;color:black}h1,h2,h3,h4,h5,h6{line-height:1.2}h4,h5,h6{font-weight:bold}b,strong,caption,th,thead,dt,legend{font-weight:bold}cite,dfn,em,i{font-style:italic}code,kbd,samp,pre,tt,var{font-family:mono-space,monospace}h1,h2,h3,h4,h5,h6{word-spacing:-0.125em}p{word-spacing:0.125em;hyphenate:auto;hyphenate-lines:3}p+p{text-indent:1.5em}p+p.no-indent{text-indent:0}pre{white-space:pre}del{text-decoration:line-through}mark{background:rgba(255, 255, 0, 0.4);padding:0 .25em}ins{color:#f00}small,sup,sub{font-size:80%}big{font-size:125%;line-height:80%}abbr,acronym{font-size:85%;text-transform:uppercase;letter-spacing:.1em}abbr[title],acronym[title],dfn[title]{border-bottom:1px dotted black;cursor:help}sup,sub{line-height:0}sup{vertical-align:super}sub{vertical-align:sub}blockquote{padding:1.5em}hr{border:none;background:#ddd;width:100%}ul,ol{margin-left:1.5em}ul{list-style:disc outside}ol{list-style:decimal outside}input,select,button{cursor:pointer}table{font:inherit;width:100%}article,aside,header,hgroup,nav,figure,section,footer{display:block}.debug{outline:solid gold 1px}.debug-background{background:rgba(255, 215, 0, 0.2) !important}
+/* type */
+body{font-size:75%;line-height:1.5}h1,h2,h3,h4,h5,h6{position:relative}h1,h2{line-height:36px;margin-bottom:18px}h1,h2,h3,h4{margin-top:18px}h3,h4,h5,h6{line-height:20px}h1{font-size:28px;top:5px}h2{font-size:28px;top:8px}h3{font-size:22px;top:1px}h4{font-size:18px;top:2px}h5{font-size:15px;top:4px}h6{font-size:13px;top:5px}h1:first-child,h2:first-child,h3:first-child,h4:first-child{margin-top:0}p,pre,address{font-size:13px;line-height:20px;position:relative;top:5px}small{font-size:11px}abbr,code,kbd,samp,small,var{line-height:15px}ul,ol,dl,dialog{font-size:13px;line-height:20px;position:relative;top:5px;margin-top:18px;margin-bottom:18px}li ul,li ol,ul ul,ol ol{top:0;margin-top:0;margin-bottom:0}li h1,li h2,li h3,li h4,li h5,li h6,li p{top:0}form,legend,label{font-size:13px;line-height:20px}legend{position:relative;top:5px}table{font-size:13px}caption{font-size:13px;line-height:20px;position:relative}hr{position:relative;height:4px;margin:18px 0 14px 0}
+
+
+/* NoFollowr CSS */
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: whitesmoke url(-darkest.png) repeat fixed;
+  color: #684D43;
+}
+
+.multiplebgs body {
+  background: -moz-linear-gradient(center top, rgba(85, 119, 153,.4) 0%, rgba(85, 119, 153,.01) 60%), url(-darkest.png);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(85, 119, 153,.4)), color-stop(60%,rgba(85, 119, 153,.01))), url(-darkest.png); /* webkit */
+  background-repeat: repeat-x, repeat; 
+  background-position: top left, top left;
+  background-attachment: fixed, fixed;
+  background-color: #927E77;
+}
+
+#wrap {
+  position: relative;
+  width: 41em;
+  padding: 1px 6em 72px;
+  margin: 36px auto 36px;
+  background: #fff url(../images/barelythere.png);
+  -webkit-box-shadow: 0px 4px 9px rgba(14, 20, 26, .25);
+  -moz-box-shadow: 0px 4px 9px rgba(14, 20, 26, .25);
+  box-shadow: 0px 4px 9px rgba(14, 20, 26, .25);
+  -khtml-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+header[role=banner] {
+  margin: 72px 0 54px;
+}
+
+section {
+  padding-left: 2em;
+}
+
+footer {
+  padding-top: 72px;
+}
+footer p {
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 36px;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+  margin-top: 36px; /* override the rules from baseline.type.css */
+}
+
+h4:first-child {
+  margin-top: 18px; /* override the rules from baseline.type.css */
+}
+
+h1, h2 {
+  color: #684D43;
+  font-weight: 200;
+}
+
+h1 {
+  font-weight: 100;
+  border-bottom: 1px solid #684D43;
+  padding: 0px 0px 1px 0px;
+  letter-spacing:2px;
+}
+
+h1 strong {
+  color: black;
+}
+
+h2 {
+  border-bottom: 1px solid;
+  margin-left: -1em;
+}
+
+h3, h4 {
+  font-weight: bold;
+  font-size: 15px;
+  top: 3px;
+  color: #684D43;
+  word-spacing: 0;
+}
+h4 {
+  margin-top: 18px;
+}
+ul, ol {
+  margin-left: 0;
+}
+
+h3 + ol {
+  margin-top: .5em;
+}
+
+li {
+  margin-bottom: .5em;
+}
+
+a:link, a:visited {
+  color: #369;
+}
+a:focus, a:hover, a:active {
+  color: #79b;
+}
+
+del {
+  color: #666;
+}
+
+ins {
+  color: #b00b00;
+}
+
+.btw {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  color: #99aabb;
+  margin-top: -1em;
+}
+
+.icon {
+  background: url(../images/bullet_tick.png) no-repeat center right;
+  padding-right: 16px;
+}
+
+.nofollow {
+  background-image: url(../images/bullet_stop.png);
+}
+
+.download {
+  display: block;
+  display: inline-block;
+  text-decoration: none;
+}
+.down {
+  width: 16px;
+  height: 17px;
+  position: absolute;
+  right: 24px;
+  top: 7px;
+  background: url(../images/arrow_down_16x16.png) no-repeat 0 50%;
+}
+
+header .download {
+  margin-top: 1.5em;
+}
+
+.pale-blue {
+  position: relative;
+  background: #e7eef5;
+  border: 1px solid #becfe3;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 6px rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 6px rgba(0,0,0,.15);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 6px rgba(0,0,0,.15);
+  color: #369;
+  font-family: "lucida grande", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  padding: 8px 0 9px 2em;
+  text-align: left;
+  width: 16em;
+}
+
+.pale-blue:focus, .pale-blue:hover {
+  color: #6f8cc0;
+  background: #eff6fd;
+}
+
+.pale-blue:active {
+  -moz-box-shadow: 0 -2px 2px rgba(0,0,0,.06), 0 1px 3px rgba(255,255,255,.99);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #e7eef5;
+  border: 1px solid #b7bec5;
+  color: #6f7ca0;
+}
+
+.logo {
+  display: block;
+  margin: 1em auto 0;
+  border: none;
+}
+
+.alert {
+  background: #FFF3D4;
+  border: 1px solid #F2DF91;
+  padding: 1em 2em 2em;
+  margin: -2em 0 4em;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .99), 0 1px 3px rgba(0,0,0, 0.13);
+  -moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .99), 0 1px 3px rgba(0,0,0, 0.13);
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .99), 0 1px 3px rgba(0,0,0, 0.13);
+}
+
+.alert:last-child {
+  margin-bottom: 0;
+}
+
+.screenshot {
+  -webkit-box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 6px rgba(0, 0, 0, 0.15);
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid #BECFE3;
+  display: block;
+  margin: 0.5em 0 1em;
+  width: 320px;
+  height: 33px;
+}
+.mail{
+
+	}
+.my_image{
+	width: 20px;
+	/*height: 20px;*/
+	}	

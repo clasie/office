@@ -1,0 +1,8 @@
+<?php
+class ShowController {
+   public function allAction(){
+   }
+   public function test(){
+      echo get_class($this);
+   }
+}

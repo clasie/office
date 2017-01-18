@@ -1,0 +1,14 @@
+.label_Hide_reponses{
+    float: left;
+    margin-right: 10px;
+}
+.check_toggle{
+    position: relative;
+    top: -2px;
+}
+.hide_class{
+   display: none;
+}
+.show_class{
+   display: block;
+}

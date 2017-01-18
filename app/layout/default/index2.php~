@@ -1,0 +1,4 @@
+<?php 
+
+echo $workflow->href_public;;
+?>

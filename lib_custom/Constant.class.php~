@@ -1,0 +1,20 @@
+<?php
+class Constant {
+    //session
+    const DB_ENV_KEY = 'db_env_key';
+    const APPLICATION_INI_CONFIG = 'application_ini_config';
+    //env
+    const ENV_LOCAL = 'LOCAL';
+    const ENV_REMOTE = 'REMOTE';
+    //db ini keys
+    const DB_KEY_ENV_LOCAL = 'db_local';
+    const DB_KEY_ENV_REMOTE = 'db_remote';
+    //db
+    const TABLE_PROVIDER = 'users_tuto_provider';
+    const TABLE_QUESTION = 'qcms_question';
+}
+/**
+$db_key_ini
+$application_ini[$db_key_ini]
+*/
+
